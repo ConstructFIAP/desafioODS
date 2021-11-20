@@ -34,4 +34,8 @@ public class Pedido {
     @OneToMany(mappedBy = "pedido")
     private List<DetalhePedido> detalhesPedido;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="id_cliente")
+    private Cliente cliente;
+
 }

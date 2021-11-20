@@ -15,27 +15,30 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "reobra_loja")
+@Table(name="reobra_cliente")
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-public class Loja {
+public class Cliente {
 
     @Id
-    @SequenceGenerator(name = "seqLoja", sequenceName = "seqLoja", initialValue = 1, allocationSize = 1)
-    @GeneratedValue(generator = "seqLoja")
-    @Column(name = "id")
+    @SequenceGenerator(name = "seqCliente", sequenceName = "seqCliente", initialValue = 1, allocationSize = 1)
+    @GeneratedValue(generator = "seqCliente")
+    @Column(name="id")
     private Long id;
 
-    @Column(name = "telefone")
-    private String telefone;
-
-    @Column(name = "endereco")
-    private String endereco;
-
-    @Column(name = "nome")
+    @Column(name="nome")
     private String nome;
 
-    @OneToMany(mappedBy = "loja")
+    @Column(name="nascimento")
+    private String nascimento;
+
+    @Column(name="endereco")
+    private String endereco;
+
+    @Column(name="telefone")
+    private String telefone;
+
     @JsonIgnore
-    private List<ProdutoEstoque> produtosEstoque;
+    @OneToMany(mappedBy = "cliente")
+    private List<Pedido> pedidos;
 
 }
