@@ -20,7 +20,7 @@ POST /dzero/produtos - salvar/atualizar produto
 
 POST /dzero/produtos/mercado - associar produto a um mercado
 
-DELETE /dzero/produtos - deletar produto
+DELETE /dzero/produtos/{id} - deletar produto
 
 ----
 
@@ -30,6 +30,8 @@ GET /dzero/mercados/{id} - detalhes de uma mercado
 
 POST /dzero/mercados - salvar/atualizar mercado
 
+DELETE /dzero/mercados/{id} - deletar mercado
+
 -----
 
 GET /dzero/caridade - listar todas as instituições de caridade
@@ -38,6 +40,8 @@ GET /dzero/caridade/{id} - detalhes de uma instituição de caridade
 
 POST /dzero/caridade - salvar/atualizar instituição de caridade
 
+DELETE /dzero/caridade/{id} - deletar instituição de caridade
+
 -----
 
 GET /dzero/clientes - listar todos os clientes
@@ -45,3 +49,5 @@ GET /dzero/clientes - listar todos os clientes
 GET /dzero/clientes/{id} - detalhes de um cliente
 
 POST /dzero/clientes - salvar/atualizar cliente
+
+DELETE /dzero/clientes/{id} - deletar cliente
