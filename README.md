@@ -15,6 +15,8 @@ GET /dzero/produtos/mercado/{idMercado} - lista de produtos por mercado
 
 POST /dzero/produtos - salvar produto
 
+POST /dzero/produtos/mercado - associar produto a um mercado
+
 DELETE /dzero/produtos - deletar produto
 
 ----
@@ -23,11 +25,15 @@ GET /dzero/mercados - listar todos os mercados
 
 GET /dzero/mercados/{id} - detalhes de uma mercado
 
+POST /dzero/mercados - salvar mercado
+
 -----
 
 GET /dzero/caridade - listar todas as instituições de caridade
 
 GET /dzero/caridade/{id} - detalhes de uma instituição de caridade
+
+POST /dzero/caridade - salvar instituição de caridade
 
 -----
 

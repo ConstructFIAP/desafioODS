@@ -1,6 +1,7 @@
 package br.com.desperdiciozero.controller;
 
 
+import br.com.desperdiciozero.model.InstCaridade;
 import br.com.desperdiciozero.model.Mercado;
 import br.com.desperdiciozero.repository.MercadoRepository;
 import org.springframework.http.HttpStatus;
@@ -28,6 +29,12 @@ public class MercadoController {
     public ResponseEntity<Mercado> getMercado(@PathVariable("id") long id){
         Mercado mercado = mercadoRepository.getById(id);
         return new ResponseEntity<Mercado>(mercado, HttpStatus.OK);
+    }
+
+    @PostMapping("/mercados")
+    public ResponseEntity<Mercado> salvarMercado(@RequestBody Mercado mercado) {
+        Mercado novoMercado = mercadoRepository.save(mercado);
+        return new ResponseEntity<Mercado>(novoMercado, HttpStatus.CREATED);
     }
 
 }

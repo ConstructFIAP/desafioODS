@@ -16,18 +16,20 @@ import java.math.BigDecimal;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@IdClass(ProdutoMercadoId.class)
 @Table(name="ods_produto_mercado")
 public class ProdutoMercado implements Serializable {
 
-    @Id
+    @EmbeddedId
+    private ProdutoMercadoId produtoMercadoId = new ProdutoMercadoId();
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="id_produto")
+    @MapsId("idProduto")
     private Produto produto;
 
-    @Id
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="id_mercado")
+    @MapsId("idMercado")
     private Mercado mercado;
 
     @Column(name="preco")
