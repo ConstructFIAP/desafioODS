@@ -1,13 +1,14 @@
 package br.com.desperdiciozero.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.Getter;
+import lombok.Setter;
 
-import javax.persistence.FetchType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 import java.io.Serializable;
 
+@Getter
+@Setter
 public class ProdutoMercadoId implements Serializable {
 
     @Id
@@ -16,7 +17,6 @@ public class ProdutoMercadoId implements Serializable {
     private Produto produto;
 
     @Id
-    @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="id_mercado")
     private Mercado mercado;

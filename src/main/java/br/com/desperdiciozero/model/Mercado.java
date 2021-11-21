@@ -17,7 +17,6 @@ import java.util.List;
 @AllArgsConstructor
 @Table(name = "ods_mercado")
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-@Embeddable
 public class Mercado {
 
     @Id
@@ -39,7 +38,4 @@ public class Mercado {
     @JsonIgnore
     private List<ProdutoMercado> produtosMercado;
 
-    public Mercado(long idMercado) {
-        this.id = idMercado;
-    }
 }

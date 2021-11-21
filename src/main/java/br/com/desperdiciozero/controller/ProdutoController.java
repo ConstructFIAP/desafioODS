@@ -85,6 +85,7 @@ public class ProdutoController {
     @PostMapping("/produtos/mercado/{idMercado}")
     public ResponseEntity<ProdutoMercado> salvarProdutoEmMercado(@PathVariable("idMercado") long idMercado, @RequestBody ProdutoMercado produtoMercado) {
         Mercado mercado = mercadoRepository.getById(idMercado);
+        produtoMercado.setMercado(mercado);
         ProdutoMercado novoProduto = produtoMercadoRepository.save(produtoMercado);
         return new ResponseEntity<ProdutoMercado>(novoProduto, HttpStatus.CREATED);
     }
