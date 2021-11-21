@@ -1,6 +1,7 @@
 package br.com.desperdiciozero.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -16,7 +17,7 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 @AllArgsConstructor
 @IdClass(ProdutoMercadoId.class)
-@Table(name="ods_produto_estoque")
+@Table(name="ods_produto_mercado")
 public class ProdutoMercado implements Serializable {
 
     @Id
@@ -30,10 +31,10 @@ public class ProdutoMercado implements Serializable {
     @JoinColumn(name="id_mercado")
     private Mercado mercado;
 
-    @Column(name="estoque")
-    private int estoque;
-
     @Column(name="preco")
     private BigDecimal preco;
+
+    @Column(name="data_validade")
+    private String dataValidade;
 
 }

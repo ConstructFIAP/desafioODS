@@ -15,7 +15,6 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "ods_mercado")
-//@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Mercado {
 
     @Id

@@ -1,5 +1,6 @@
 package br.com.desperdiciozero.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -13,6 +14,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name="ods_produto")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Produto {
 
     @Id
@@ -26,9 +28,6 @@ public class Produto {
 
     @Column(name="organico")
     private boolean organico;
-
-    @Column(name="dataValidade")
-    private String dataValidade;
 
     @Column(name="caminho_imagem")
     private String caminho_imagem;

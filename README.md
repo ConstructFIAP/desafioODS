@@ -11,13 +11,15 @@ GET /dzero/produtos/{id} - detalhes de um produto
 
 GET /dzero/produtos/imagem/{id} - imagem de um produto específico
 
+GET /dzero/produtos/mercado/{idMercado} - lista de produtos por mercado
+
 POST /dzero/produtos - salvar produto
 
 DELETE /dzero/produtos - deletar produto
 
 ----
 
-GET /dzero/mercados - listar todas as lojas
+GET /dzero/mercados - listar todos os mercados
 
 GET /dzero/mercados/{id} - detalhes de uma mercado
 

@@ -29,7 +29,7 @@ public class InstCaridadeController {
     }
 
     @GetMapping("/caridade/{id}")
-    public ResponseEntity<InstCaridade> getLoja(@PathVariable("id") long id){
+    public ResponseEntity<InstCaridade> getInstCaridade(@PathVariable("id") long id){
         InstCaridade instCaridade = instCaridadeRepository.getById(id);
         return new ResponseEntity<InstCaridade>(instCaridade, HttpStatus.OK);
     }
