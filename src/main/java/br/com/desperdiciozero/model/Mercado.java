@@ -1,6 +1,7 @@
 package br.com.desperdiciozero.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -15,6 +16,8 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "ods_mercado")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+@Embeddable
 public class Mercado {
 
     @Id
@@ -36,4 +39,7 @@ public class Mercado {
     @JsonIgnore
     private List<ProdutoMercado> produtosMercado;
 
+    public Mercado(long idMercado) {
+        this.id = idMercado;
+    }
 }

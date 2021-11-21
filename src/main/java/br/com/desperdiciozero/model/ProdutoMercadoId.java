@@ -21,5 +21,4 @@ public class ProdutoMercadoId implements Serializable {
     @JoinColumn(name="id_mercado")
     private Mercado mercado;
 
-
 }

@@ -26,7 +26,6 @@ public class ProdutoMercado implements Serializable {
     private Produto produto;
 
     @Id
-    @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="id_mercado")
     private Mercado mercado;

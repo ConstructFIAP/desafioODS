@@ -5,6 +5,7 @@ import br.com.desperdiciozero.model.Mercado;
 import br.com.desperdiciozero.model.Produto;
 import br.com.desperdiciozero.model.ProdutoMercado;
 import br.com.desperdiciozero.repository.MercadoRepository;
+import br.com.desperdiciozero.repository.ProdutoMercadoRepository;
 import br.com.desperdiciozero.repository.ProdutoRepository;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
@@ -25,10 +26,12 @@ public class ProdutoController {
 
     private ProdutoRepository produtoRepository;
     private MercadoRepository mercadoRepository;
+    private ProdutoMercadoRepository produtoMercadoRepository;
 
-    public ProdutoController(ProdutoRepository produtoRepository, MercadoRepository mercadoRepository) {
+    public ProdutoController(ProdutoRepository produtoRepository, MercadoRepository mercadoRepository, ProdutoMercadoRepository produtoMercadoRepository) {
         this.produtoRepository = produtoRepository;
         this.mercadoRepository = mercadoRepository;
+        this.produtoMercadoRepository = produtoMercadoRepository;
     }
 
     @GetMapping("/produtos")
@@ -77,6 +80,13 @@ public class ProdutoController {
         Mercado mercado = mercadoRepository.getById(idMercado);
         List<ProdutoMercado> produtos = mercado.getProdutosMercado();
         return new ResponseEntity<List<ProdutoMercado>>(produtos, HttpStatus.OK);
+    }
+
+    @PostMapping("/produtos/mercado/{idMercado}")
+    public ResponseEntity<ProdutoMercado> salvarProdutoEmMercado(@PathVariable("idMercado") long idMercado, @RequestBody ProdutoMercado produtoMercado) {
+        Mercado mercado = mercadoRepository.getById(idMercado);
+        ProdutoMercado novoProduto = produtoMercadoRepository.save(produtoMercado);
+        return new ResponseEntity<ProdutoMercado>(novoProduto, HttpStatus.CREATED);
     }
 
 }

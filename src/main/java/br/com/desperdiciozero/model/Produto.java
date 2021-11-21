@@ -15,6 +15,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @Table(name="ods_produto")
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+@Embeddable
 public class Produto {
 
     @Id
@@ -32,4 +33,7 @@ public class Produto {
     @Column(name="caminho_imagem")
     private String caminho_imagem;
 
+    public Produto(Long idProduto) {
+        this.id = idProduto;
+    }
 }
