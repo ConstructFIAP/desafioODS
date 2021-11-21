@@ -20,6 +20,7 @@ import java.math.BigDecimal;
 public class ProdutoMercado implements Serializable {
 
     @EmbeddedId
+    @JsonIgnore
     private ProdutoMercadoId produtoMercadoId = new ProdutoMercadoId();
 
     @ManyToOne(fetch = FetchType.LAZY)

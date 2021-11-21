@@ -82,7 +82,7 @@ public class ProdutoController {
         return new ResponseEntity<List<ProdutoMercado>>(produtos, HttpStatus.OK);
     }
 
-    @PostMapping("/produtos/mercado/")
+    @PostMapping("/produtos/mercado")
     public ResponseEntity<ProdutoMercado> salvarProdutoEmMercado(@RequestBody ProdutoMercado produtoMercado) {
         Mercado mercado = mercadoRepository.getById(produtoMercado.getMercado().getId());
         Produto produto = produtoRepository.getById(produtoMercado.getProduto().getId());
