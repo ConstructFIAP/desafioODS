@@ -38,4 +38,10 @@ public class InstCaridadeController {
         return new ResponseEntity<InstCaridade>(novaInstCaridade, HttpStatus.CREATED);
     }
 
+    @DeleteMapping("/caridade/{id}")
+    public ResponseEntity<?> excluirInstCaridade(@PathVariable("id") long id) {
+        instCaridadeRepository.deleteById(id);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
 }

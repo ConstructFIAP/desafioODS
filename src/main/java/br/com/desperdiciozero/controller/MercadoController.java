@@ -37,4 +37,10 @@ public class MercadoController {
         return new ResponseEntity<Mercado>(novoMercado, HttpStatus.CREATED);
     }
 
+    @DeleteMapping("/mercados/{id}")
+    public ResponseEntity<?> excluirMercado(@PathVariable("id") long id) {
+        mercadoRepository.deleteById(id);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
 }
