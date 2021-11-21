@@ -1,40 +1,36 @@
-# ReobraSpring
+# desperdicioZero
 
-Deployado no Heroku usando banco Oracle: https://reobra.herokuapp.com/
+Deployado no Heroku usando banco Oracle: https://dzero.herokuapp.com/
 
 ### Endpoints:
 
 ---
-GET /reobra/produto - lista de produtos
+GET /dzero/produtos - lista de produtos
 
-GET /reobra/produto/{id} - detalhes de um produto
+GET /dzero/produtos/{id} - detalhes de um produto
 
-GET /reobra/produto/imagem/{id} - imagem de um produto específico
+GET /dzero/produtos/imagem/{id} - imagem de um produto específico
 
-POST /reobra/produto - salvar produto
+POST /dzero/produtos - salvar produto
 
-DELETE /reobra/produto - deletar produto
-
----
-
-GET /reobra/pedido - listar todos os pedidos
-
-GET /reobra/pedido/{id} - detalhes de um pedido
-
-GET/reobra/pedido/cliente/{id} - listar todos os pedidos feitos por um cliente específico
-
-POST /reobra/pedido - salvar pedido
+DELETE /dzero/produtos - deletar produto
 
 ----
 
-GET /reobra/loja - listar todas as lojas
+GET /dzero/mercados - listar todas as lojas
 
-GET /reobra/loja/{id} - detalhes de uma loja
+GET /dzero/mercados/{id} - detalhes de uma mercado
 
 -----
 
-GET /reobra/cliente - listar todos os clientes
+GET /dzero/caridade - listar todas as instituições de caridade
 
-GET /reobra/cliente/{id} - detalhes de um cliente
+GET /dzero/caridade/{id} - detalhes de uma instituição de caridade
 
-POST /reobra/cliente - salvar cliente
+-----
+
+GET /dzero/clientes - listar todos os clientes
+
+GET /dzero/clientes/{id} - detalhes de um cliente
+
+POST /dzero/clientes - salvar cliente

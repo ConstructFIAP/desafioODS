@@ -1,6 +1,5 @@
 package br.com.desperdiciozero.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -13,21 +12,23 @@ import javax.persistence.*;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name="reobra_produto")
-@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+@Table(name="ods_produto")
 public class Produto {
 
     @Id
-    @SequenceGenerator(name = "seqProduto", sequenceName = "seqProduto", initialValue = 1, allocationSize = 1)
-    @GeneratedValue(generator = "seqProduto")
+    @SequenceGenerator(name = "odsSeqProduto", sequenceName = "odsSeqProduto", initialValue = 1, allocationSize = 1)
+    @GeneratedValue(generator = "odsSeqProduto")
     @Column(name="id")
     private Long id;
 
     @Column(name="nome")
     private String nome;
 
-    @Column(name="descricao")
-    private String descricao;
+    @Column(name="organico")
+    private boolean organico;
+
+    @Column(name="dataValidade")
+    private String dataValidade;
 
     @Column(name="caminho_imagem")
     private String caminho_imagem;

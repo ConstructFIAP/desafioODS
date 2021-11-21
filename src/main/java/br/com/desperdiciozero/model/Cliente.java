@@ -1,7 +1,6 @@
 package br.com.desperdiciozero.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -15,13 +14,13 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name="reobra_cliente")
-@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+@Table(name="ods_cliente")
+//@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Cliente {
 
     @Id
-    @SequenceGenerator(name = "seqCliente", sequenceName = "seqCliente", initialValue = 1, allocationSize = 1)
-    @GeneratedValue(generator = "seqCliente")
+    @SequenceGenerator(name = "odsSeqCliente", sequenceName = "odsSeqCliente", initialValue = 1, allocationSize = 1)
+    @GeneratedValue(generator = "odsSeqCliente")
     @Column(name="id")
     private Long id;
 
@@ -39,6 +38,6 @@ public class Cliente {
 
     @JsonIgnore
     @OneToMany(mappedBy = "cliente")
-    private List<Pedido> pedidos;
+    private List<Mercado> lojasFavoritas;
 
 }

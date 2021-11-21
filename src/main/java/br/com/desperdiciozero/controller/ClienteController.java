@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/reobra")
+@RequestMapping("/dzero")
 public class ClienteController {
 
     private ClienteRepository clienteRepository;
@@ -19,19 +19,19 @@ public class ClienteController {
         this.clienteRepository = clienteRepository;
     }
 
-    @GetMapping("/cliente")
+    @GetMapping("/clientes")
     public ResponseEntity<List<Cliente>> listarClientes(){
         List<Cliente> clientes = clienteRepository.findAll();
         return new ResponseEntity<List<Cliente>>(clientes, HttpStatus.OK);
     }
 
-    @GetMapping("/cliente/{id}")
+    @GetMapping("/clientes/{id}")
     public ResponseEntity<Cliente> getCliente(@PathVariable("id") long id){
         Cliente cliente = clienteRepository.getById(id);
         return new ResponseEntity<Cliente>(cliente, HttpStatus.OK);
     }
 
-    @PostMapping("/cliente")
+    @PostMapping("/clientes")
     public ResponseEntity<Cliente> salvarCliente(@RequestBody Cliente cliente) {
         Cliente novoCliente = clienteRepository.save(cliente);
         return new ResponseEntity<Cliente>(novoCliente, HttpStatus.CREATED);
