@@ -1,6 +1,8 @@
 # desperdicioZero
 
-Deployado no Heroku usando banco Oracle: https://dzero.herokuapp.com/
+Deployado no Heroku usando banco Oracle: https://desperdiciozero.herokuapp.com/
+Também é possível rodar localmente
+Projeto realizado com JDK 8
 
 ### Endpoints:
 
